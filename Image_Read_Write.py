@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[10]:
 
 
-get_ipython().system('jupyter nbconvert --to=python Image_Processing.ipynb')
+get_ipython().system('jupyter nbconvert --to=python Image_Read_Write.ipynb')
 
 
 # In[2]:
@@ -36,7 +36,7 @@ cv2.destroyAllWindows()
 # the imshow() display an image in a window. The window will be the same as the image size.
 # the first argument is the image name to display and the second is the image variable.
 # the Output will be like this:
-# <img src="Capture.png">
+# ![Capture.jpg](attachment:Capture.jpg)
 
 # cv2.waitKey(): Its argument is the time in milliseconds. The function waits for specified milliseconds for any keyboard event.
 # 
@@ -68,6 +68,21 @@ plt.show()
 
 print(img.shape)
 plt.hist(img)
+
+
+# ## using Pyplotlib for plotting
+
+# In[5]:
+
+
+import numpy as np
+import cv2
+from matplotlib import pyplot as plt
+
+img = cv2.imread('files/fig/Lenna.png',0)
+plt.imshow(img, cmap = 'gray', interpolation = 'bicubic')
+plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
+plt.show()
 
 
 # In[ ]:
